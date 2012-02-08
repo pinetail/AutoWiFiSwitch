@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jp.pinetail.android.wifi.switcher"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:debuggable="true">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name=".receiver.PhoneStateReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED"></action>
+                <action android:name="android.intent.action.PACKAGE_INSTALL"></action>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"></action>
+                <data android:scheme="package"></data>
+            </intent-filter>
+        </receiver>
+        <uses-library android:name="com.google.android.maps" />
+    </application>
+
+</manifest>

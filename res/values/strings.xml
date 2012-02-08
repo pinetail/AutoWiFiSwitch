@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_twitter_password_hint">パスワード</string>
+    <string name="ui_twitter_userid_hint">ユーザー名</string>
+    <string name="ui_twitter_auth_button_text">接続</string>
+    <string name="ui_twitter_unauth_button_text">切断</string>
+    <string name="ui_twitter_cancel_button_text">キャンセル</string>
+    <string name="ui_twitter_authorized_text">接続済み</string>
+    <string name="ui_twitter_description_text">接続すると、マナーモードを ON/OFF した際に Twitter に通知します。※位置情報は通知されません。</string>
+
+    <string name="pref_twitter_title">Twitter 連携</string>
+    <string name="pref_twitter_key">PREF_TWITTER</string>
+    <string name="pref_version_title">バージョン</string>
+    <string name="pref_version_key">PREF_VERSION</string>
+    <string name="pref_licence_summary">このアプリの使い方やライセンス情報など</string>
+    <string name="pref_licence_value">HexRinger について</string>
+    <string name="pref_licence_key">PREF_LICENCE</string>
+    <string name="pref_category_outline">概要</string>
+    <string name="pref_category_general">一般設定</string>
+    <string name="pref_watchinterval_title">更新間隔</string>
+    <string name="pref_watchinterval_summary">HexRinger が動作する間隔</string>
+    <string name="pref_watchinterval_key">PREF_WATCH_INTERVAL_MIN</string>
+    <string name="pref_watchinterval_default">10</string>
+
+    <string name="pref_start_at_boot_title">自動的に開始</string>
+    <string name="pref_start_at_boot_key">PREF_ENABLE_START_AT_TIME</string>
+    <string name="pref_start_at_boot_default">0</string>
+    <string name="pref_start_at_boot_summary">携帯電話が起動した時に自動的に開始</string>
+
+    <string name="pref_mannermode_type_title">マナーモードの種類</string>
+    <string name="pref_mannermode_type_summary">マナーモードの種類を選択</string>
+    <string name="pref_mannermode_type_key">PREF_MANNERMODE_TYPE</string>
+    <string name="pref_mannermode_type_default">0</string>
+
+    <string name="pref_about_url">http://hexringer.posterous.com/hexringer-0</string>
+
+    <string name="pref_alarm_enabled_key">PREF_ALARM_ENABLED</string>
+
+    <string name="pref_watch_hexes_key">PREF_WATCH_HEXES</string>
+
+    <string name="pref_last_hex_key">PREF_LAST_HEX</string>
+
+    <string name="pref_last_location_key">PREF_LAST_LOCATION</string>
+
+    <string name="pref_next_alarm_time_key">PREF_NEXT_ALARM_TIME</string>
+
+    <string name="app_name">オートWiFiスイッチ</string>
+</resources>
