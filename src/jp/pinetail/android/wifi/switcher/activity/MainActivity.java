@@ -7,19 +7,13 @@ import java.util.Set;
 import jp.pinetail.android.wifi.switcher.Const;
 import jp.pinetail.android.wifi.switcher.PreferenceWrapper;
 import jp.pinetail.android.wifi.switcher.R;
-import jp.pinetail.android.wifi.switcher.R.drawable;
-import jp.pinetail.android.wifi.switcher.R.id;
-import jp.pinetail.android.wifi.switcher.R.layout;
-import jp.pinetail.android.wifi.switcher.R.string;
 import jp.pinetail.android.wifi.switcher.overlay.GeoHexOverlay;
 import jp.pinetail.android.wifi.switcher.receiver.AlarmBroadcastReceiver.StringUtil;
-import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.telephony.CellLocation;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
-import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
@@ -66,7 +60,7 @@ public class MainActivity extends MapActivity {
                 if (hexCodes.contains(hexCode)) {
                     hexCodes.remove(hexCode);
                 } else {
-                    hexCodes.clear();
+//                    hexCodes.clear();
                     hexCodes.add(hexCode);
                 }
 
@@ -125,11 +119,23 @@ public class MainActivity extends MapActivity {
         mMapView.setBuiltInZoomControls(true);
 
         mMapController = mMapView.getController();
+        
+        // 六角形の描画
         watchHexOverlay.setOnTapHexListener(onTapHexListener);
         watchHexOverlay.setBitmap(
                 BitmapFactory.decodeResource(getResources(), R.drawable.ringer_map));
 
         mMapView.getOverlays().add(watchHexOverlay);
+        
+        // GEOHEXの描画
+        Set<String> watchHexes = watchHexOverlay.getSelectedGeoHexCodes();
+        String watchHexesStr = pref.getString(R.string.pref_watch_hexes_key, null);
+        if (!StringUtil.isNullOrEmpty(watchHexesStr)) {
+            String[] array = StringUtil.toArray(watchHexesStr, Const.ARRAY_SPLITTER);
+            for (String string : array) {
+                watchHexes.add(string);
+            }
+        }
 
     }
 

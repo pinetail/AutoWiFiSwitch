@@ -44,5 +44,5 @@
 
     <string name="pref_next_alarm_time_key">PREF_NEXT_ALARM_TIME</string>
 
-    <string name="app_name">オートWiFiスイッチ</string>
+    <string name="app_name">自動WiFiスイッチ</string>
 </resources>
